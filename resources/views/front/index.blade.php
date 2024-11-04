@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
-    <link href="./main.css" rel="stylesheet" />
+    <link href="{{ asset('output.css') }}" rel="stylesheet" />
+    <link href="{{ asset('main.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
     <!-- CSS -->
@@ -43,61 +43,22 @@
         </div>
     </nav>
     <nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
+
+        @foreach ($categories as $category )
         <a href="categoryPage.html"
             class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
             <div class="w-6 h-6 flex shrink-0">
-                <img src="assets/images/icons/heart.svg" alt="icon" />
+                <img src="{{ Storage::url($category->icon)}}" alt="icon" />
             </div>
-            <span>Health</span>
+            <span>{{ $category->name }}</span>
         </a>
-        <a href="categoryPage.html"
-            class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-            <div class="w-6 h-6 flex shrink-0">
-                <img src="assets/images/icons/status-up.svg" alt="icon" />
-            </div>
-            <span>Business</span>
-        </a>
-        <a href="categoryPage.html"
-            class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-            <div class="w-6 h-6 flex shrink-0">
-                <img src="assets/images/icons/car.svg" alt="icon" />
-            </div>
-            <span>Automotive</span>
-        </a>
-        <a href="categoryPage.html"
-            class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-            <div class="w-6 h-6 flex shrink-0">
-                <img src="assets/images/icons/global.svg" alt="icon" />
-            </div>
-            <span>Entertainment</span>
-        </a>
-        <a href="categoryPage.html"
-            class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-            <div class="w-6 h-6 flex shrink-0">
-                <img src="assets/images/icons/coffee.svg" alt="icon" />
-            </div>
-            <span>Foods</span>
-        </a>
-        <a href="categoryPage.html"
-            class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-            <div class="w-6 h-6 flex shrink-0">
-                <img src="assets/images/icons/courthouse.svg" alt="icon" />
-            </div>
-            <span>Politic</span>
-        </a>
-        <a href="categoryPage.html"
-            class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-            <div class="w-6 h-6 flex shrink-0">
-                <img src="assets/images/icons/cup.svg" alt="icon" />
-            </div>
-            <span>Sport</span>
-        </a>
+        @endforeach
     </nav>
     <section id="Featured" class="mt-[30px]">
         <div class="main-carousel w-full">
             <div class="featured-news-card relative w-full h-[550px] flex shrink-0 overflow-hidden">
-                <img src="assets/images/thumbnails/th-featured-1.png"
-                    class="thumbnail absolute w-full h-full object-cover" alt="icon" />
+                <img src="assets/images/thumbnails/cover.png" class="thumbnail absolute w-full h-full object-cover"
+                    alt="icon" />
                 <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10">
                 </div>
                 <div
@@ -122,8 +83,8 @@
                 </div>
             </div>
             <div class="featured-news-card relative w-full h-[550px] flex shrink-0 overflow-hidden">
-                <img src="assets/images/thumbnails/th-featured-1.png"
-                    class="thumbnail absolute w-full h-full object-cover" alt="icon" />
+                <img src="assets/images/thumbnails/th-key.png" class="thumbnail absolute w-full h-full object-cover"
+                    alt="icon" />
                 <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10">
                 </div>
                 <div
@@ -148,8 +109,8 @@
                 </div>
             </div>
             <div class="featured-news-card relative w-full h-[550px] flex shrink-0 overflow-hidden">
-                <img src="assets/images/thumbnails/th-featured-1.png"
-                    class="thumbnail absolute w-full h-full object-cover" alt="icon" />
+                <img src="assets/images/thumbnails/th-key.png" class="thumbnail absolute w-full h-full object-cover"
+                    alt="icon" />
                 <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10">
                 </div>
                 <div
@@ -212,7 +173,7 @@
                         <p
                             class="badge-white absolute top-5 left-5 rounded-full p-[8px_18px] bg-white font-bold text-xs leading-[18px]">
                             ENTERTAINMENT</p>
-                        <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                        <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                             alt="thumbnail" />
                     </div>
                     <div class="card-info flex flex-col gap-[6px]">
@@ -359,8 +320,8 @@
         </div>
         <div class="flex justify-between items-center h-fit">
             <div class="featured-news-card relative w-full h-[424px] flex flex-1 rounded-[20px] overflow-hidden">
-                <img src="assets/images/thumbnails/th-featured-1.png"
-                    class="thumbnail absolute w-full h-full object-cover" alt="icon" />
+                <img src="assets/images/thumbnails/th-key.png" class="thumbnail absolute w-full h-full object-cover"
+                    alt="icon" />
                 <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10">
                 </div>
                 <div class="card-detail w-full flex items-end p-[30px] relative z-20">
@@ -393,7 +354,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -421,7 +382,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -435,7 +396,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -449,7 +410,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -478,8 +439,8 @@
         </div>
         <div class="flex justify-between items-center h-fit">
             <div class="featured-news-card relative w-full h-[424px] flex flex-1 rounded-[20px] overflow-hidden">
-                <img src="assets/images/thumbnails/th-featured-1.png"
-                    class="thumbnail absolute w-full h-full object-cover" alt="icon" />
+                <img src="assets/images/thumbnails/th-key.png" class="thumbnail absolute w-full h-full object-cover"
+                    alt="icon" />
                 <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10">
                 </div>
                 <div class="card-detail w-full flex items-end p-[30px] relative z-20">
@@ -526,7 +487,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -540,7 +501,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -554,7 +515,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -568,7 +529,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -617,7 +578,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -631,7 +592,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -645,7 +606,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -659,7 +620,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -673,7 +634,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -687,7 +648,7 @@
                         <div
                             class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
                             <div class="w-[130px] h-[100px] flex shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
+                                <img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
                                     alt="thumbnail" />
                             </div>
                             <div class="flex flex-col justify-center-center gap-[6px]">
@@ -705,12 +666,12 @@
         </div>
     </section>
 
-    <script src="js/two-lines-text.js"></script>
+    <script src="{{ asset('js/two-lines-text.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- JavaScript -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="js/carousel.js"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
 </body>
 
 </html>
