@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{{ asset('assets/images/logos/favicon.png') }}" type="image/x-icon" />
     <link href="{{ asset('output.css') }}" rel="stylesheet" />
     <link href="{{ asset('main.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
@@ -16,7 +17,7 @@
     <nav id="Navbar" class="max-w-[1130px] mx-auto flex justify-between items-center mt-[30px]">
         <div class="logo-container flex gap-[30px] items-center">
             <a href="{{ route('front.index') }}" class="flex shrink-0">
-                <img src="{{ asset('assets/images/logos/logo.svg') }}" alt="logo" />
+                <img src="{{ asset('assets/images/logos/LogoCiamis.svg') }}" alt="logo" />
             </a>
             <div class="h-12 border border-[#E8EBF4]"></div>
             <form action="searchPage.html"
@@ -191,7 +192,7 @@
                 <div class="card-detail w-full flex items-end p-[30px] relative z-20">
                     <div class="flex flex-col gap-[10px]">
                         <p class="text-white">Featured</p>
-                        <a href="details.html"
+                        <a href="{{ route('front.details', $entertainment_featured_articles->slug) }}"
                             class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300">{{ $entertainment_featured_articles->name }}</a>
                         <p class="text-white">{{ $entertainment_featured_articles->created_at->format('d M Y') }}</p>
                     </div>
@@ -247,7 +248,7 @@
                 <div class="card-detail w-full flex items-end p-[30px] relative z-20">
                     <div class="flex flex-col gap-[10px]">
                         <p class="text-white">Featured</p>
-                        <a href="details.html"
+                        <a href="{{ route('front.details', $business_featured_articles->slug) }}"
                             class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300">{{ $business_featured_articles->name }}</a>
                         <p class="text-white">{{ $business_featured_articles->created_at->format('d M Y') }}</p>
                     </div>
@@ -324,7 +325,8 @@
                                     <h3 class="font-bold text-lg leading-[27px]">
                                         {{ substr($article->name, 0, 50) }}{{ strlen($article->name) > 50 ? '...' : '' }}
                                     </h3>
-                                    <p class="text-sm leading-[21px] text-[#A3A6AE]">{{ $article->created_at->format('d M Y') }}</p>
+                                    <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                                        {{ $article->created_at->format('d M Y') }}</p>
                                 </div>
                             </div>
                         </a>
