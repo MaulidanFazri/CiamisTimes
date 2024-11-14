@@ -82,7 +82,8 @@ class FrontController extends Controller
         return view('front.index', compact('categories', 'articles', 'featured_articles', 'authors', 'bannerads', 'entertainment_articles', 'entertainment_featured_articles', 'business_articles', 'business_featured_articles', 'automotive_articles', 'automotive_featured_articles'));
     }
 
-    public function category(Category $category) {
+    public function category(Category $category)
+    {
         $categories = Category::all();
 
         $bannerads = BannerAdvertisement::where('is_active', 'active')
@@ -92,5 +93,18 @@ class FrontController extends Controller
             ->first();
 
         return view('front.category', compact('category', 'categories', 'bannerads'));
+    }
+
+    public function author(Author $author)
+    {
+        $categories = Category::all();
+
+        $bannerads = BannerAdvertisement::where('is_active', 'active')
+            ->inRandomOrder()
+            ->where('type', 'banner')
+            // ->take(1)
+            ->first();
+            
+        return view('front.author', compact('author','bannerads', 'categories'));
     }
 }
