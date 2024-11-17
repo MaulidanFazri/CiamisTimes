@@ -11,13 +11,27 @@
 
 /* Handle */
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(255, 107, 24, 1);
+    background: #567a94;
     border-radius: 3px;
 }
 
 /* Handle on hover */
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 107, 24, 1);
+    background: #567a94;
+}
+
+/* Dark mode styles */
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+    background: #3f3f46; /* Darker background for dark mode */
+    border: solid 2.5px black; /* Darker border for dark mode */
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #567a94; /* Same handle color for dark mode */
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #567a94; /* Same handle hover color for dark mode */
 }
 
 #Content-wrapper {
@@ -25,7 +39,7 @@
     font-size: 18px;
     line-height: 34px;
 
-    font-family: 'Lexend Deca';
+    font-family: "Lexend Deca";
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -71,11 +85,11 @@
 }
 
 #Content-wrapper ins {
-    color: #FF6B18;
+    color: #ff6b18;
 }
 
 #Content-wrapper a {
-    color: #FF6B18;
+    color: #ff6b18;
 }
 
 #Content-wrapper a:hover {

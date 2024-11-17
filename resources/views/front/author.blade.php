@@ -1,7 +1,7 @@
 @extends('front.master')
 @section('content')
 
-    <body class="font-[Poppins] pb-[83px]">
+    <body class="font-[Poppins] dark:bg-[#08080a]">
         <x-navbar />
         <nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
             @foreach ($categories as $item_category)
@@ -76,6 +76,4 @@
     </body>
 
 @endsection
-@push('after-scripts')
-    <script src="https://cdn.tailwindcss.com"></script>
-@endpush
+
