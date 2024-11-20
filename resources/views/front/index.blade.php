@@ -69,7 +69,7 @@
                             <div
                                 class="thumbnail-container relative flex h-[200px] w-full shrink-0 overflow-hidden rounded-[20px]">
                                 <p
-                                    class="badge-white absolute left-5 top-5 rounded-full bg-white p-[8px_18px] text-xs font-bold leading-[18px]">
+                                    class="badge-white absolute left-5 top-5 rounded-full bg-white p-[8px_18px] text-xs font-bold uppercase leading-[18px]">
                                     {{ $article->category->name }}</p>
                                 <img src="{{ Storage::url($article->thumbnail) }}" class="h-full w-full object-cover"
                                     alt="thumbnail" />
@@ -306,13 +306,13 @@
     </body>
 @endsection
 @push('after-styles')
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
+    <link rel="stylesheet" href="{{ asset('flickity.min.css') }}">
 @endpush
 
 @push('after-scripts')
     <script src="{{ asset('js/two-lines-text.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="{{ asset('js/flickity.pkgd.min.js') }}"></script>
     <script src="{{ asset('js/carousel.js') }}"></script>
 @endpush
