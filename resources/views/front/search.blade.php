@@ -1,5 +1,7 @@
 @extends('front.master')
 @section('content')
+<title>{{ config('app.name', 'Laravel') }} | Search: {{ $keyword }}</title>
+
 
     <body class="font-[Poppins] dark:bg-[#08080a]">
         <x-navbar />

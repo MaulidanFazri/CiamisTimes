@@ -1,5 +1,6 @@
 @extends('front.master')
 @section('content')
+    <title>{{ config('app.name', 'Laravel') }} | {{ $category->name }}</title>
 
     <body class="bg-white font-[Poppins] transition-all duration-150 dark:bg-[#08080a]">
         <x-navbar />
@@ -54,12 +55,13 @@
             <div class="flex w-fit shrink-0 flex-col gap-3">
                 <a href="{{ $bannerads->link }}">
                     <div
-                        class="flex h-[120px] w-[900px] shrink-0 overflow-hidden transition-all duration-100 rounded-2xl ring-1 ring-[#EEF0F7] dark:ring-zinc-800">
+                        class="flex h-[120px] w-[900px] shrink-0 overflow-hidden rounded-2xl ring-1 ring-[#EEF0F7] transition-all duration-100 dark:ring-zinc-800">
                         <img src="{{ Storage::url($bannerads->thumbnail) }}" class="h-full w-full object-cover"
                             alt="ads" />
                     </div>
                 </a>
-                <p class="flex gap-1 text-sm transition-all duration-100 font-medium leading-[21px] text-[#A3A6AE] dark:text-zinc-400">
+                <p
+                    class="flex gap-1 text-sm font-medium leading-[21px] text-[#A3A6AE] transition-all duration-100 dark:text-zinc-400">
                     Our Advertisement <a href="#" class="h-[18px] w-[18px]"><img
                             src="{{ asset('assets/images/icons/message-question.svg') }}" alt="icon" /></a>
                 </p>

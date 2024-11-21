@@ -1,5 +1,6 @@
 @extends('front.master')
 @section('content')
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <body class="bg-white font-[Poppins] transition-all duration-150 dark:bg-[#08080a]">
         <x-navbar />

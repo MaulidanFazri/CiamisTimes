@@ -1,5 +1,7 @@
 @extends('front.master')
 @section('content')
+    <title>{{ config('app.name', 'Laravel') }} | {{ $articleNews->name }}</title>
+
 
     <body class="bg-white font-[Poppins] transition-all duration-150 dark:bg-[#08080a]">
         <x-navbar />
@@ -72,7 +74,8 @@
                                         {{ substr($item_news->name, 0, 50) }}{{ strlen($item_news->name) > 50 ? '...' : '' }}
                                     </p>
                                     <p class="text-xs leading-[18px] text-[#A3A6AE]">
-                                        {{ $item_news->created_at->format('d M Y') }} • {{ $item_news->category->name }}</p>
+                                        {{ $item_news->created_at->format('d M Y') }} • {{ $item_news->category->name }}
+                                    </p>
                                 </div>
                             </div>
                         </a>

@@ -1,6 +1,9 @@
 @extends('front.master')
 @section('content')
 
+    <title>{{ config('app.name', 'Laravel') }} | {{ $author->name }}</title>
+
+
     <body class="font-[Poppins] dark:bg-[#08080a]">
         <x-navbar />
         <nav id="Category" class="mx-auto mt-[30px] flex max-w-[1130px] items-center justify-center gap-4">
@@ -23,7 +26,7 @@
                         <img src="{{ Storage::url($author->avatar) }}" alt="profile photo" />
                     </div>
                     <div class="flex flex-col">
-                        <p class="dark: text-lg dark:text-white font-semibold leading-[27px]">{{ $author->name }}</p>
+                        <p class="dark: text-lg font-semibold leading-[27px] dark:text-white">{{ $author->name }}</p>
                         <span class="text-[#A3A6AE]">{{ $author->occupation }}</span>
                     </div>
                 </div>
@@ -34,8 +37,8 @@
                     @foreach ($author->news as $news)
                         <a href="{{ route('front.details', $news->slug) }}" class="card">
                             <div
-                            class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
-                            <div class="thumbnail-container relative h-[200px] overflow-hidden rounded-[20px]">
+                                class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                                <div class="thumbnail-container relative h-[200px] overflow-hidden rounded-[20px]">
                                     <div
                                         class="badge absolute bottom-auto left-5 right-auto top-5 flex rounded-[50px] bg-white p-[8px_18px]">
                                         <p class="text-xs font-bold uppercase leading-[18px]">{{ $news->category->name }}
@@ -45,7 +48,7 @@
                                         class="h-full w-full object-cover" />
                                 </div>
                                 <div class="flex flex-col gap-[6px]">
-                                    <h3 class="text-lg font-bold dark:text-white leading-[27px]">
+                                    <h3 class="text-lg font-bold leading-[27px] dark:text-white">
                                         {{ substr($news->name, 0, 70) }}{{ strlen($news->name) > 70 ? '...' : '' }}</h3>
                                     <p class="text-sm leading-[21px] text-[#A3A6AE]">
                                         {{ $news->created_at->format('d M Y') }}
