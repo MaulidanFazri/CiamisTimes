@@ -12,3 +12,11 @@ Route::get('/category/{category:slug}', [FrontController::class, 'category'])->n
 Route::get('/author/{author:slug}', [FrontController::class, 'author'])->name('front.author');
 
 Route::get('/search', [FrontController::class, 'search'])->name('front.search');
+
+Route::get('/contact', [FrontController::class, 'contact'])->name('front.contact');
+
+Route::get('/privacy', [FrontController::class, 'privacy'])->name('front.privacy');
+
+Route::get('/terms', [FrontController::class, 'terms'])->name('front.terms');
+
+Route::get('/disclaimer', [FrontController::class, 'disclaimer'])->name('front.disclaimer');

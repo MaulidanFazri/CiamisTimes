@@ -162,4 +162,32 @@ class FrontController extends Controller
 
         return view('front.details', compact('articleNews', 'categories', 'articles', 'bannerads', 'square_ads_1', 'square_ads_2', 'author_news'));
     }
+
+    public function contact()
+    {
+        $categories = Category::all();
+
+        return view('front.contact', compact('categories'));
+    }
+
+    public function privacy()
+    {
+        $categories = Category::all();
+
+        return view('front.privacy', compact('categories'));
+    }
+
+    public function terms()
+    {
+        $categories = Category::all();
+
+        return view('front.terms', compact('categories'));
+    }
+
+    public function disclaimer()
+    {
+        $categories = Category::all();
+
+        return view('front.disclaimer', compact('categories'));
+    }
 }
