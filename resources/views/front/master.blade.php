@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="" lang="id">
+<html class="transition-all duration-300 ease-in-out" lang="id">
 
 <head>
     <meta charset="UTF-8" />
@@ -24,47 +24,69 @@
     }
 </script>
 <script>
-    // Get necessary elements
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const favicon = document.getElementById('favicon');
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get necessary elements
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const favicon = document.getElementById('favicon');
+        const logo = document.getElementById('logo');
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-    // Function to update the favicon based on the current theme
-    function updateFavicon(theme) {
-        if (theme === "dark") {
-            favicon.href = "{{ asset('assets/images/logos/favicon-dark.svg') }}";
-        } else {
-            favicon.href = "{{ asset('assets/images/logos/favicon.svg') }}";
+        // URLs for light and dark theme assets
+        const lightLogo = "{{ asset('assets/images/logos/logo.svg') }}";
+        const darkLogo = "{{ asset('assets/images/logos/logo_dark.svg') }}";
+        const lightFavicon = "{{ asset('assets/images/logos/favicon.svg') }}";
+        const darkFavicon = "{{ asset('assets/images/logos/favicon_dark.svg') }}";
+
+        // Function to update logo and favicon based on theme
+        function updateThemeAssets(theme) {
+            if (theme === "dark") {
+                logo.src = darkLogo;
+                favicon.href = darkFavicon;
+            } else {
+                logo.src = lightLogo;
+                favicon.href = lightFavicon;
+            }
         }
-    }
 
-    // Function to initialize the theme based on localStorage or system preference
-    function initializeTheme() {
-        const currentTheme = localStorage.getItem("theme");
+        // Function to initialize the theme based on localStorage or system preference
+        function initializeTheme() {
+            const currentTheme = localStorage.getItem("theme");
 
-        if (currentTheme === "dark" || (!currentTheme && prefersDarkScheme.matches)) {
-            document.documentElement.classList.add("dark");
-            updateFavicon("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-            updateFavicon("light");
+            if (currentTheme === "dark" || (!currentTheme && prefersDarkScheme.matches)) {
+                document.documentElement.classList.add("dark");
+                updateThemeAssets("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+                updateThemeAssets("light");
+            }
         }
-    }
 
-    // Function to toggle the theme
-    function toggleTheme() {
-        document.documentElement.classList.toggle("dark");
-        const newTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
-        localStorage.setItem("theme", newTheme);
-        updateFavicon(newTheme);
-    }
+        // Function to toggle the theme
+        function toggleTheme() {
+            document.documentElement.classList.toggle("dark");
+            const newTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+            localStorage.setItem("theme", newTheme);
+            updateThemeAssets(newTheme);
+        }
 
-    // Initialize the theme on page load
-    initializeTheme();
+        // Initialize the theme on page load
+        initializeTheme();
 
-    // Add event listener for dark mode toggle
-    darkModeToggle.addEventListener("click", toggleTheme);
+        // Add event listener for dark mode toggle
+        darkModeToggle.addEventListener("click", toggleTheme);
+
+        // Monitor system preference changes and apply theme dynamically
+        prefersDarkScheme.addEventListener("change", (e) => {
+            const systemPrefersDark = e.matches;
+            if (!localStorage.getItem("theme")) {
+                const theme = systemPrefersDark ? "dark" : "light";
+                document.documentElement.classList.toggle("dark", systemPrefersDark);
+                updateThemeAssets(theme);
+            }
+        });
+    });
 </script>
+
 
 @stack('after-scripts')
 

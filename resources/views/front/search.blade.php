@@ -8,7 +8,7 @@
         <nav id="Category" class="mx-auto mt-[30px] flex max-w-[1130px] items-center justify-center gap-4">
             @foreach ($categories as $item_category)
                 <a href="{{ route('front.category', $item_category->slug) }}"
-                    class="flex gap-[10px] rounded-lg p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                    class="flex gap-[10px] rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                     <div class="flex h-6 w-6 shrink-0">
                         <img src="{{ Storage::url($item_category->icon) }}" alt="icon" class="dark:invert" />
                     </div>
@@ -31,7 +31,7 @@
                     @foreach ($articles as $news)
                         <a href="{{ route('front.details', $news->slug) }}" class="card">
                             <div
-                                class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                                class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                                 <div class="thumbnail-container relative h-[200px] overflow-hidden rounded-[20px]">
                                     <div
                                         class="badge absolute bottom-auto left-5 right-auto top-5 flex rounded-[50px] bg-white p-[8px_18px]">

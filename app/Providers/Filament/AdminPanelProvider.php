@@ -32,10 +32,12 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->profile()
             ->login()
-            ->brandName('Ciamis Times')
-            ->favicon(asset('assets/images/logos/' . (session('theme', 'default') === 'dark' ? 'favicon-dark.svg' : 'favicon.svg')))
+            ->brandLogo('assets/images/logos/logo.svg')
+            ->brandLogoHeight('35px')
+            ->darkModeBrandLogo('assets/images/logos/logo_dark.svg')
+            ->favicon('assets/images/logos/favicon.svg')
             ->colors([
-                'primary' => Color::Green,
+                'primary' => '#733d93',
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -64,7 +66,7 @@ class AdminPanelProvider extends PanelProvider
             ->userMenuItems([
                 'profile' => MenuItem::make()
                     ->label(fn() => Auth::user()->name)
-                    ->url(fn (): string => EditProfilePage::getUrl())
+                    ->url(fn(): string => EditProfilePage::getUrl())
                     ->icon('heroicon-m-user-circle'),
             ])
             ->plugins([

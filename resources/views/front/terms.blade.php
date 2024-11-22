@@ -7,7 +7,7 @@
         <nav id="Category" class="mx-auto mt-[30px] flex max-w-[1130px] items-center justify-center gap-4">
             @foreach ($categories as $category)
                 <a href="{{ route('front.category', $category->slug) }}"
-                    class="flex gap-[10px] rounded-lg p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                    class="flex gap-[10px] rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                     <div class="flex h-6 w-6 shrink-0">
                         <img src="{{ Storage::url($category->icon) }}" alt="icon" class="dark:invert" />
                     </div>

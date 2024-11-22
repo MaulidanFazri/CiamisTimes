@@ -2,12 +2,12 @@
 @section('content')
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <body class="bg-white font-[Poppins] transition-all duration-150 dark:bg-[#08080a]">
+    <body class="bg-white font-[Poppins] transition-all duration-300 ease-in-out dark:bg-[#08080a]">
         <x-navbar />
         <nav id="Category" class="mx-auto mt-[30px] flex max-w-[1130px] items-center justify-center gap-4">
             @foreach ($categories as $category)
                 <a href="{{ route('front.category', $category->slug) }}"
-                    class="flex gap-[10px] rounded-lg p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                    class="flex gap-[10px] rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                     <div class="flex h-6 w-6 shrink-0">
                         <img src="{{ Storage::url($category->icon) }}" alt="icon" class="dark:invert" />
                     </div>
@@ -35,11 +35,11 @@
                             </div>
                             <div class="prevNextButtons mb-[60px] flex items-center gap-4">
                                 <button
-                                    class="button--previous flex h-[38px] w-[38px] shrink-0 appearance-none items-center justify-center rounded-full ring-1 ring-white transition-all duration-100 hover:ring-2 hover:ring-[#567a94]">
+                                    class="button--previous flex h-[38px] w-[38px] shrink-0 appearance-none items-center justify-center rounded-full ring-1 ring-white transition-all duration-100 hover:ring-2 hover:ring-[#733d93]">
                                     <img src="{{ asset('assets/images/icons/arrow.svg') }}" alt="arrow" />
                                 </button>
                                 <button
-                                    class="button--next flex h-[38px] w-[38px] shrink-0 rotate-180 appearance-none items-center justify-center rounded-full ring-1 ring-white transition-all duration-100 hover:ring-2 hover:ring-[#567a94]">
+                                    class="button--next flex h-[38px] w-[38px] shrink-0 rotate-180 appearance-none items-center justify-center rounded-full ring-1 ring-white transition-all duration-100 hover:ring-2 hover:ring-[#733d93]">
                                     <img src="{{ asset('assets/images/icons/arrow.svg') }}" alt="arrow" />
                                 </button>
                             </div>
@@ -58,7 +58,7 @@
                     Good for Curiousity
                 </h2>
                 <p
-                    class="badge-orange w-fit rounded-lg bg-[#dcf1ff] p-[8px_18px] text-sm font-bold leading-[21px] text-[#567a94] dark:bg-zinc-700 dark:text-white">
+                    class="badge-orange w-fit rounded-full bg-[#f0e5f6] p-[8px_18px] text-sm font-bold leading-[21px] text-[#733d93] dark:bg-zinc-700 dark:text-white">
                     UP TO DATE</p>
             </div>
             <div class="grid grid-cols-3 gap-[30px]">
@@ -66,7 +66,7 @@
                 @forelse ($articles as $article)
                     <a href="{{ route('front.details', $article->slug) }}" class="card-news">
                         <div
-                            class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                            class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                             <div
                                 class="thumbnail-container relative flex h-[200px] w-full shrink-0 overflow-hidden rounded-[20px]">
                                 <p
@@ -92,7 +92,7 @@
         <section id="Best-authors" class="mx-auto mt-[70px] flex max-w-[1130px] flex-col gap-[30px]">
             <div class="flex flex-col items-center gap-[14px] text-center">
                 <p
-                    class="badge-orange w-fit rounded-lg bg-[#dcf1ff] p-[8px_18px] text-sm font-bold leading-[21px] text-[#567a94] dark:bg-zinc-700 dark:text-white">
+                    class="badge-orange w-fit rounded-full bg-[#f0e5f6] p-[8px_18px] text-sm font-bold leading-[21px] text-[#733d93] dark:bg-zinc-700 dark:text-white">
                     BEST AUTHORS</p>
                 <h2 class="text-[26px] font-bold leading-[39px] dark:text-white">
                     Explore All Masterpieces <br />
@@ -104,7 +104,7 @@
                 @forelse ($authors as $author)
                     <a href="{{ route('front.author', $author->slug) }}" class="card-authors">
                         <div
-                            class="flex flex-col items-center gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                            class="flex flex-col items-center gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                             <div class="flex h-[70px] w-[70px] shrink-0 overflow-hidden rounded-full">
                                 <img src="{{ Storage::url($author->avatar) }}" class="h-full w-full object-cover"
                                     alt="avatar" />
@@ -131,8 +131,10 @@
                 </a>
                 <p
                     class="flex gap-1 text-sm font-medium leading-[21px] text-[#A3A6AE] transition-all duration-100 dark:text-zinc-400">
-                    Our Advertisement <a href="#" class="h-[18px] w-[18px]"><img
-                            src="{{ asset('assets/images/icons/message-question.svg') }}" alt="icon" /></a>
+                    Our Advertisement <a
+                        href="mailto:ciamistimes@gmail.com?subject=Pemesanan%20Pemasangan%20Iklan%20di%20Ciamis%20Times&body=Kepada%20Tim%20Ciamis%20Times%2C%0A%0ASaya%20ingin%20melakukan%20pemesanan%20untuk%20pemasangan%20iklan%20di%20situs%20web%20Ciamis%20Times.%20Berikut%20adalah%20informasi%20terkait%20pemesanan%20iklan%3A%0A%0A-%20Nama%20Perusahaan%3A%20%5BNama%20Perusahaan%5D%0A-%20Jenis%20Iklan%3A%20%5BBanner%2C%20Square%5D%0A-%20Durasi%20Pemasangan%20Iklan%3A%20%5BBerapa%20Lama%20Iklan%20Akan%20Tayang%5D%0A-%20Anggaran%3A%20%5BAnggaran%20untuk%20Iklan%5D%0A-%20Kontak%20Person%3A%20%5BNama%20Kontak%20Person%5D%0A-%20Email%20Kontak%20Person%3A%20%5BEmail%20Kontak%20Person%5D%0A-%20Telepon%20Kontak%20Person%3A%20%5BNomor%20Telepon%20Kontak%20Person%5D%0A%0AMohon%20informasi%20lebih%20lanjut%20mengenai%20prosedur%20dan%20harga%20pemasangan%20iklan%20di%20Ciamis%20Times%2C%20serta%20syarat%20dan%20ketentuan%20yang%20berlaku.%0A%0ATerima%20kasih%20atas%20perhatian%20dan%20kerjasamanya.%20Saya%20menunggu%20balasan%20dari%20Tim%20Ciamis%20Times.%0A%0AHormat%20saya%2C%0A%5BNama%20Anda%5D%0A%5BPerusahaan%20Anda%20(jika%20ada)%5D"
+                        class="h-[18px] w-[18px]"><img src="{{ asset('assets/images/icons/message-question.svg') }}"
+                            alt="icon" /></href=>
                 </p>
             </div>
         </section>
@@ -143,7 +145,7 @@
                     in Entertainment
                 </h2>
                 <a href="{{ route('front.category', 'entertainment') }}"
-                    class="ho dark flex gap-[10px] rounded-lg p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:text-white dark:ring-zinc-700 dark:hover:ring-[#567a94]">Explore
+                    class="ho dark flex gap-[10px] rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:text-white dark:ring-zinc-700 dark:hover:ring-[#733d93]">Explore
                     All</a>
             </div>
             <div class="flex h-fit items-center justify-between">
@@ -167,13 +169,13 @@
                         @forelse ($entertainment_articles as $article)
                             <a href="{{ route('front.details', $article->slug) }}" class="card py-[2px]">
                                 <div
-                                    class="flex items-center gap-4 rounded-[20px] bg-transparent p-[14px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                                    class="flex items-center gap-4 rounded-[20px] bg-transparent p-[14px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                                     <div class="flex h-[100px] w-[130px] shrink-0 overflow-hidden rounded-[20px]">
                                         <img src="{{ Storage::url($article->thumbnail) }}"
                                             class="h-full w-full object-cover" alt="thumbnail" />
                                     </div>
                                     <div class="justify-center-center flex flex-col gap-[6px]">
-                                        <h3 class="text-lg font-bold leading-[27px]">
+                                        <h3 class="text-full font-bold leading-[27px]">
                                             {{ substr($article->name, 0, 50) }}{{ strlen($article->name) > 50 ? '...' : '' }}
                                         </h3>
                                         <p class="text-sm leading-[21px] text-[#A3A6AE]">
@@ -199,7 +201,7 @@
                     in Business
                 </h2>
                 <a href="{{ route('front.category', 'business') }}"
-                    class="ho dark flex gap-[10px] rounded-lg p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:text-white dark:ring-zinc-700 dark:hover:ring-[#567a94]">Explore
+                    class="ho dark flex gap-[10px] rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:text-white dark:ring-zinc-700 dark:hover:ring-[#733d93]">Explore
                     All</a>
             </div>
             <div class="flex h-fit items-center justify-between">
@@ -223,7 +225,7 @@
                         @forelse ($business_articles as $article)
                             <a href="{{ route('front.details', $article->slug) }}" class="card py-[2px]">
                                 <div
-                                    class="flex items-center gap-4 rounded-[20px] bg-transparent p-[14px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                                    class="flex items-center gap-4 rounded-[20px] bg-transparent p-[14px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                                     <div class="flex h-[100px] w-[130px] shrink-0 overflow-hidden rounded-[20px]">
                                         <img src="{{ Storage::url($article->thumbnail) }}"
                                             class="h-full w-full object-cover" alt="thumbnail" />
@@ -255,7 +257,7 @@
                     in Automotive
                 </h2>
                 <a href="{{ route('front.category', 'automotive') }}"
-                    class="ho dark flex gap-[10px] rounded-lg p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:text-white dark:ring-zinc-700 dark:hover:ring-[#567a94]">Explore
+                    class="ho dark flex gap-[10px] rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:text-white dark:ring-zinc-700 dark:hover:ring-[#733d93]">Explore
                     All</a>
             </div>
             <div class="flex h-fit items-center justify-between">
@@ -279,7 +281,7 @@
                         @forelse ($automotive_articles as $article)
                             <a href="{{ route('front.details', $article->slug) }}" class="card py-[2px]">
                                 <div
-                                    class="flex items-center gap-4 rounded-[20px] bg-transparent p-[14px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                                    class="flex items-center gap-4 rounded-[20px] bg-transparent p-[14px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                                     <div class="flex h-[100px] w-[130px] shrink-0 overflow-hidden rounded-[20px]">
                                         <img src="{{ Storage::url($article->thumbnail) }}"
                                             class="h-full w-full object-cover" alt="thumbnail" />

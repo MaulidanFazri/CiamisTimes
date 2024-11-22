@@ -8,7 +8,7 @@
         <nav id="Category" class="mx-auto mt-[30px] flex max-w-[1130px] items-center justify-center gap-4">
             @foreach ($categories as $category)
                 <a href="{{ route('front.category', $category->slug) }}"
-                    class="flex gap-[10px] rounded-lg p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                    class="flex gap-[10px] rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                     <div class="flex h-6 w-6 shrink-0">
                         <img src="{{ Storage::url($category->icon) }}" alt="icon" class="dark:invert" />
                     </div>
@@ -64,7 +64,7 @@
                     @forelse($author_news as $item_news)
                         <a href="{{ route('front.details', $item_news->slug) }}" class="card-from-author">
                             <div
-                                class="flex gap-4 rounded-[20px] bg-transparent p-[14px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                                class="flex gap-4 rounded-[20px] bg-transparent p-[14px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                                 <div class="flex h-[70px] w-[70px] shrink-0 overflow-hidden rounded-2xl">
                                     <img src="{{ Storage::url($item_news->thumbnail) }}" class="h-full w-full object-cover"
                                         alt="thumbnail">
@@ -125,7 +125,7 @@
                     @forelse ($articles as $article)
                         <a href="{{ route('front.details', $article->slug) }}" class="card-news">
                             <div
-                                class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#567a94] dark:ring-zinc-700 dark:hover:ring-[#567a94]">
+                                class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                                 <div
                                     class="thumbnail-container relative flex h-[200px] w-full shrink-0 overflow-hidden rounded-[20px]">
                                     <p
