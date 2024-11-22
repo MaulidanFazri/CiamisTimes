@@ -15,6 +15,7 @@ use App\Filament\Resources\AuthorResource\RelationManagers;
 
 class AuthorResource extends Resource
 {
+    protected static ?string $navigationGroup = 'Blog';
     protected static ?string $model = Author::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user';

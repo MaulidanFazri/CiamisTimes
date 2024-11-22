@@ -8,6 +8,7 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use App\Models\BannerAdvertisement;
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\BannerAdvertisementResource\Pages;
@@ -15,6 +16,7 @@ use App\Filament\Resources\BannerAdvertisementResource\RelationManagers;
 
 class BannerAdvertisementResource extends Resource
 {
+    protected static ?string $navigationGroup = 'Blog';
     protected static ?string $model = BannerAdvertisement::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-megaphone';
@@ -65,6 +67,11 @@ class BannerAdvertisementResource extends Resource
             ])
             ->filters([
                 //
+                SelectFilter::make('type')
+                    ->options([
+                        'banner' => 'Banner',
+                        'square' => 'Square',
+                    ])
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

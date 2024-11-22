@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use App\Models\ArticleNews;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\RichEditor;
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ArticleNewsResource\Pages;
@@ -16,6 +17,7 @@ use App\Filament\Resources\ArticleNewsResource\RelationManagers;
 
 class ArticleNewsResource extends Resource
 {
+    protected static ?string $navigationGroup = 'Blog';
     protected static ?string $model = ArticleNews::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
@@ -94,6 +96,8 @@ class ArticleNewsResource extends Resource
             ])
             ->filters([
                 //
+                SelectFilter::make('category_id')
+                ->relationship('category', 'name')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
