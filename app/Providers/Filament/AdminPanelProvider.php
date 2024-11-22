@@ -32,10 +32,10 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->profile()
             ->login()
-            ->brandLogo('assets/images/logos/logo.svg')
+            ->brandLogo(asset('assets/images/logos/logo.svg'))
             ->brandLogoHeight('35px')
-            ->darkModeBrandLogo('assets/images/logos/logo_dark.svg')
-            ->favicon('assets/images/logos/favicon.svg')
+            ->darkModeBrandLogo(asset('assets/images/logos/logo_dark.svg'))
+            ->favicon(asset('assets/images/logos/favicon.svg'))
             ->colors([
                 'primary' => '#733d93',
             ])
