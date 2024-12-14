@@ -13,7 +13,7 @@
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
         "APP_URL": "https://ciamis-times.vercel.app",
         "APP_KEY": "base64:XfvglJs/B4gtNnxw4A3QE8R+D5N1qlzvV5vwDvWzX3g=",
         "APP_CONFIG_CACHE": "/tmp/config.php",
