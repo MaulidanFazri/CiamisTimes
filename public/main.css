@@ -11,13 +11,13 @@
 
 /* Handle */
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #733d93;
+    background: #567a94;
     border-radius: 3px;
 }
 
 /* Handle on hover */
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #733d93;
+    background: #567a94;
 }
 
 /* Dark mode styles */
@@ -27,11 +27,11 @@
 }
 
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #733d93; /* Same handle color for dark mode */
+    background: #567a94; /* Same handle color for dark mode */
 }
 
 .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #733d93; /* Same handle hover color for dark mode */
+    background: #567a94; /* Same handle hover color for dark mode */
 }
 
 #Content-wrapper {
@@ -85,11 +85,11 @@
 }
 
 #Content-wrapper ins {
-    color: #733d93;
+    color: #567a94;
 }
 
 #Content-wrapper a {
-    color: #733d93;
+    color: #567a94;
 }
 
 #Content-wrapper a:hover {
@@ -108,8 +108,4 @@
     object-fit: contain;
     object-position: left;
     border-radius: 20px;
-}
-
-* {
-    scroll-behavior: smooth;
 }
