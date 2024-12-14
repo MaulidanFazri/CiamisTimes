@@ -3,7 +3,7 @@ function splitTextIntoTwoLines() {
     var paragraphs = document.querySelectorAll(".two-lines");
 
     paragraphs.forEach(function (paragraph) {
-        var text = paragraph.textContent.trim();
+        var text = paragraph.innerText.trim();  // Use innerText instead of textContent
         var words = text.split(" ");
         var halfwayIndex = Math.ceil(words.length / 2);
         var firstHalf = words.slice(0, halfwayIndex).join(" ");

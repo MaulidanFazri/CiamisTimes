@@ -10,7 +10,7 @@
     <link href="{{ asset('main.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
-
+    <link rel="stylesheet" href="{{ asset('flickity.min.css') }}">
     @stack('after-styles')
 </head>
 
@@ -18,17 +18,13 @@
 
 @stack('before-scripts')
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 <script>
-    tailwind.config = {
-        darkMode: "class",
-    }
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener("DOMContentLoaded", function() {
         // Get necessary elements
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const favicon = document.getElementById('favicon');
-        const logo = document.getElementById('logo');
+        const darkModeToggle = document.getElementById("darkModeToggle");
+        const favicon = document.getElementById("favicon");
+        const logo = document.getElementById("logo");
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
         // URLs for light and dark theme assets
@@ -52,7 +48,10 @@
         function initializeTheme() {
             const currentTheme = localStorage.getItem("theme");
 
-            if (currentTheme === "dark" || (!currentTheme && prefersDarkScheme.matches)) {
+            if (
+                currentTheme === "dark" ||
+                (!currentTheme && prefersDarkScheme.matches)
+            ) {
                 document.documentElement.classList.add("dark");
                 updateThemeAssets("dark");
             } else {
@@ -64,7 +63,9 @@
         // Function to toggle the theme
         function toggleTheme() {
             document.documentElement.classList.toggle("dark");
-            const newTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+            const newTheme = document.documentElement.classList.contains("dark") ?
+                "dark" :
+                "light";
             localStorage.setItem("theme", newTheme);
             updateThemeAssets(newTheme);
         }
@@ -80,12 +81,20 @@
             const systemPrefersDark = e.matches;
             if (!localStorage.getItem("theme")) {
                 const theme = systemPrefersDark ? "dark" : "light";
-                document.documentElement.classList.toggle("dark", systemPrefersDark);
+                document.documentElement.classList.toggle(
+                    "dark",
+                    systemPrefersDark
+                );
                 updateThemeAssets(theme);
             }
         });
     });
 </script>
+<script src="{{ asset('js/two-lines-text.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="{{ asset('js/flickity.pkgd.min.js') }}"></script>
+<script src="{{ asset('js/carousel.js') }}"></script>
 
 
 @stack('after-scripts')
