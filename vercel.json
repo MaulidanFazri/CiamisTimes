@@ -9,7 +9,7 @@
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "public": true,
-    "buildCommand": "apt-get update && apt-get install -y php8.3-cli curl && curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev && npm install && npm run prod",
+    "buildCommand": "vite build",
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
