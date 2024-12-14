@@ -2,32 +2,46 @@
     "version": 2,
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@0.7.3"
+            "runtime": "vercel-php@0.6.0"
         }
     },
     "routes": [
         {
-            "src": "/img/(.*)",
-            "dest": "/public/img/"
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
         },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
     ],
+    "public": true,
+    "buildCommand": "composer install --no-dev && npm install && npm run prod",
+    "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_URL": "https://example-atomik.vercel.app/",
-        "APP_CONFIG_CACHE": "/tmp/config.php",
-        "APP_EVENTS_CACHE": "/tmp/events.php",
-        "APP_PACKAGES_CACHE": "/tmp/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/routes.php",
-        "APP_SERVICES_CACHE": "/tmp/services.php",
-        "VIEW_COMPILED_PATH": "/tmp",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://ciamistimes.vercel.app",
+        "APP_KEY": "base64:XfvglJs/B4gtNnxw4A3QE8R+D5N1qlzvV5vwDvWzX3g=",
+        "APP_TIMEZONE": "Asia/Jakarta",
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "your-database-host",
+        "DB_PORT": "3306",
+        "DB_DATABASE": "ciamistimes",
+        "DB_USERNAME": "root",
+        "DB_PASSWORD": "your-database-password",
+        "SESSION_DRIVER": "cookie",
         "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
-    },
-    "outputDirectory": "public"
+        "REDIS_HOST": "127.0.0.1",
+        "REDIS_PORT": "6379",
+        "MAIL_MAILER": "log",
+        "MAIL_HOST": "127.0.0.1",
+        "MAIL_PORT": "2525",
+        "MAIL_USERNAME": "null",
+        "MAIL_PASSWORD": "null",
+        "MAIL_ENCRYPTION": "null",
+        "MAIL_FROM_ADDRESS": "hello@example.com",
+        "MAIL_FROM_NAME": "Ciamis Times",
+        "VITE_APP_NAME": "Ciamis Times"
+    }
 }
