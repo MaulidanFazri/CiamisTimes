@@ -1,47 +1,29 @@
 {
     "version": 2,
+    "framework": null,
     "functions": {
-        "api/index.php": {
-            "runtime": "vercel-php@0.7.3"
-        }
+        "api/index.php": { "runtime": "vercel-php@0.7.3" }
     },
     "routes": [
-        {
-            "src": "/build/(.*)",
-            "dest": "/public/build/$1"
-        },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
     ],
-    "public": true,
-    "buildCommand": "curl -sS https://getcomposer.org/installer | php && composer install --no-dev && npm install && npm run prod",
-    "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
-        "APP_URL": "https://ciamistimes.vercel.app",
-        "APP_KEY": "base64:XfvglJs/B4gtNnxw4A3QE8R+D5N1qlzvV5vwDvWzX3g=",
-        "APP_TIMEZONE": "Asia/Jakarta",
-        "DB_CONNECTION": "mysql",
-        "DB_HOST": "127.0.0.1",
-        "DB_PORT": "3306",
-        "DB_DATABASE": "ciamistimes",
-        "DB_USERNAME": "root",
-        "DB_PASSWORD": "",
-        "SESSION_DRIVER": "cookie",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://yourproductionurl.com",
+
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+
         "CACHE_DRIVER": "array",
-        "REDIS_HOST": "127.0.0.1",
-        "REDIS_PORT": "6379",
-        "MAIL_MAILER": "log",
-        "MAIL_HOST": "127.0.0.1",
-        "MAIL_PORT": "2525",
-        "MAIL_USERNAME": "null",
-        "MAIL_PASSWORD": "null",
-        "MAIL_ENCRYPTION": "null",
-        "MAIL_FROM_ADDRESS": "hello@example.com",
-        "MAIL_FROM_NAME": "Ciamis Times",
-        "VITE_APP_NAME": "Ciamis Times"
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie"
     }
 }
