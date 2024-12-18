@@ -11,6 +11,8 @@
 
         <!-- Social media icons container -->
         <div class="mb-8 flex justify-center space-x-4 max-sm:mb-4">
+
+            <!-- Facebook -->
             <a href="#!" type="button"
                 class="group rounded-full bg-zinc-100 p-3 font-medium uppercase leading-normal text-zinc-700 transition duration-100 hover:bg-zinc-200 focus:outline-none focus:ring-0 dark:bg-zinc-50 dark:bg-opacity-5 dark:text-zinc-300 dark:hover:bg-zinc-500 max-sm:p-2"
                 data-twe-ripple-init>
@@ -23,6 +25,7 @@
                 </span>
             </a>
 
+            <!-- Twitter -->
             <a href="#!" type="button"
                 class="group rounded-full bg-zinc-100 p-3 font-medium uppercase leading-normal text-zinc-700 transition duration-100 hover:bg-zinc-200 focus:outline-none focus:ring-0 dark:bg-zinc-50 dark:bg-opacity-5 dark:text-zinc-300 dark:hover:bg-zinc-500 max-sm:p-2"
                 data-twe-ripple-init>
@@ -35,6 +38,7 @@
                 </span>
             </a>
 
+            <!-- Instagram -->
             <a href="#!" type="button"
                 class="group rounded-full bg-zinc-100 p-3 font-medium uppercase leading-normal text-zinc-700 transition duration-100 hover:bg-zinc-200 focus:outline-none focus:ring-0 dark:bg-zinc-50 dark:bg-opacity-5 dark:text-zinc-300 dark:hover:bg-zinc-500 max-sm:p-2"
                 data-twe-ripple-init>
@@ -47,6 +51,7 @@
                 </span>
             </a>
 
+            <!-- Youtube -->
             <a href="#!" type="button"
                 class="group rounded-full bg-zinc-100 p-3 font-medium uppercase leading-normal text-zinc-700 transition duration-100 hover:bg-zinc-200 focus:outline-none focus:ring-0 dark:bg-zinc-50 dark:bg-opacity-5 dark:text-zinc-300 dark:hover:bg-zinc-500 max-sm:p-2"
                 data-twe-ripple-init>
@@ -59,6 +64,7 @@
                 </span>
             </a>
 
+            <!-- LinkedIn -->
             <a href="#!" type="button"
                 class="group rounded-full bg-zinc-100 p-3 font-medium uppercase leading-normal text-zinc-700 transition duration-100 hover:bg-zinc-200 focus:outline-none focus:ring-0 dark:bg-zinc-50 dark:bg-opacity-5 dark:text-zinc-300 dark:hover:bg-zinc-500 max-sm:p-2"
                 data-twe-ripple-init>
@@ -72,6 +78,7 @@
             </a>
         </div>
 
+        <!-- References -->
         <nav class="mb-8 flex flex-wrap justify-center gap-8 font-medium max-sm:mb-4 max-sm:gap-4">
             <a class="hover:text-zinc-950 dark:hover:text-zinc-100 max-sm:text-sm"
                 href="{{ route('front.contact') }}">Contact</a>
@@ -83,6 +90,7 @@
                 href="{{ route('front.disclaimer') }}">Disclaimer</a>
         </nav>
     </div>
+
     <!--Copyright section-->
     <div
         class="w-full bg-zinc-100 p-4 text-center text-sm text-zinc-600 dark:bg-zinc-500 dark:bg-opacity-10 dark:text-zinc-400 max-sm:p-2 max-sm:text-[10px]">

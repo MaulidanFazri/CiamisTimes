@@ -4,6 +4,8 @@
 
     <body class="bg-white font-[Poppins] transition-all duration-150 dark:bg-[#08080a]">
         <x-navbar />
+
+        <!-- Category -->
         <nav id="Category"
             class="relative mx-auto mt-[30px] max-w-[1130px] transition-all duration-100 max-[1130px]:w-full max-sm:mt-[20px]">
             <div class="carousel-category relative z-0">
@@ -17,12 +19,14 @@
                     </a>
                 @endforeach
             </div>
+
             <!-- Gradient Kiri -->
             <div class="pointer-events-none absolute left-0 top-0 z-10 h-full w-1/12 transition-all duration-100">
                 <div
                     class="h-full w-full bg-gradient-to-r from-[#ffffff] to-[rgba(255,255,255,0)] transition-all duration-100 dark:from-[rgba(0,0,0,0.9)] dark:to-[rgba(0,0,0,0)]">
                 </div>
             </div>
+
             <!-- Gradient Kanan -->
             <div class="pointer-events-none absolute right-0 top-0 z-10 h-full w-1/12 transition-all duration-100">
                 <div
@@ -30,11 +34,15 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Heading -->
         <section id="heading" class="mx-auto mt-[70px] flex max-w-[1130px] flex-col items-center gap-[30px]">
             <h1 class="text-center text-4xl font-bold leading-[45px] dark:text-white">
                 Disclaimer
             </h1>
         </section>
+
+        <!-- Article -->
         <section id="Article-container" class="mx-5 mt-[50px] flex max-w-[1130px] gap-20">
             <article id="Content-wrapper" class="text-justify dark:text-white">
                 <p class="text-sm text-zinc-400">

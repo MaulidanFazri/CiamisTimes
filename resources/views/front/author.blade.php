@@ -6,6 +6,8 @@
 
     <body class="font-[Poppins] dark:bg-[#08080a]">
         <x-navbar />
+
+        <!-- Category -->
         <nav id="Category"
             class="relative mx-auto mt-[30px] max-w-[1130px] transition-all duration-100 max-[1130px]:w-full max-sm:mt-[20px]">
             <div class="carousel-category relative z-0">
@@ -19,12 +21,14 @@
                     </a>
                 @endforeach
             </div>
+
             <!-- Gradient Kiri -->
             <div class="pointer-events-none absolute left-0 top-0 z-10 h-full w-1/12 transition-all duration-100">
                 <div
                     class="h-full w-full bg-gradient-to-r from-[#ffffff] to-[rgba(255,255,255,0)] transition-all duration-100 dark:from-[rgba(0,0,0,0.9)] dark:to-[rgba(0,0,0,0)]">
                 </div>
             </div>
+
             <!-- Gradient Kanan -->
             <div class="pointer-events-none absolute right-0 top-0 z-10 h-full w-1/12 transition-all duration-100">
                 <div
@@ -32,26 +36,33 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Author -->
         <section id="author"
-            class="mx-auto mt-[70px] max-sm:mt-[50px] flex max-w-[1130px] flex-col items-center gap-[30px] max-sm:gap-[20px] max-[1130px]:mx-5">
+            class="mx-auto mt-[70px] flex max-w-[1130px] flex-col items-center gap-[30px] max-[1130px]:mx-5 max-sm:mt-[50px] max-sm:gap-[20px]">
             <div id="title" class="flex items-center gap-[30px] max-sm:gap-[20px] max-[450px]:gap-[10px]">
                 <h1
-                    class="text-4xl font-bold leading-[45px] dark:text-white max-sm:text-right max-sm:text-2xl max-[450px]:text-xl max-sm:tracking-wider">
+                    class="text-4xl font-bold leading-[45px] dark:text-white max-sm:text-right max-sm:text-2xl max-sm:tracking-wider max-[450px]:text-xl">
                     Author News
                 </h1>
                 <h1 class="text-4xl font-bold leading-[45px] dark:text-white max-sm:text-2xl">/</h1>
                 <div class="flex items-center gap-3">
-                    <div class="flex h-[60px] w-[60px] max-sm:w-[45px] max-sm:h-[45px] max-[450px]:w-[40px] max-[450px]:h-[40px] shrink-0 overflow-hidden rounded-full">
+                    <div
+                        class="flex h-[60px] w-[60px] shrink-0 overflow-hidden rounded-full max-sm:h-[45px] max-sm:w-[45px] max-[450px]:h-[40px] max-[450px]:w-[40px]">
                         <img src="{{ Storage::url($author->avatar) }}" alt="profile photo" />
                     </div>
                     <div class="flex flex-col">
-                        <p class="text-lg font-semibold leading-[27px] dark:text-white max-sm:text-sm max-[450px]:text-[10px]">{{ $author->name }}
+                        <p
+                            class="text-lg font-semibold leading-[27px] dark:text-white max-sm:text-sm max-[450px]:text-[10px]">
+                            {{ $author->name }}
                         </p>
                         <span class="text-[#A3A6AE] max-sm:text-xs max-[450px]:text-[8px]">{{ $author->occupation }}</span>
                     </div>
                 </div>
             </div>
             </h1>
+
+            <!-- Cards -->
             @if ($author->news->isNotEmpty())
                 <div id="search-cards" class="flex flex-wrap justify-center gap-[30px] max-sm:gap-[20px]">
                     @foreach ($author->news as $news)
@@ -87,6 +98,8 @@
                 <p class="text-center dark:text-zinc-400">No news found</p>
             @endif
         </section>
+
+        <!-- Advertisement -->
         <section id="Advertisement"
             class="mx-auto mt-[70px] flex max-w-[1130px] justify-center max-[1130px]:mx-5 max-sm:mt-[50px]">
             <div class="flex w-fit shrink-0 flex-col gap-3">

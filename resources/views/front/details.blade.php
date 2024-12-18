@@ -5,6 +5,8 @@
 
     <body class="bg-white font-[Poppins] transition-all duration-150 dark:bg-[#08080a]">
         <x-navbar />
+
+        <!-- Category -->
         <nav id="Category"
             class="relative mx-auto mt-[30px] max-w-[1130px] transition-all duration-100 max-[1130px]:w-full max-sm:mt-[20px]">
             <div class="carousel-category relative z-0">
@@ -18,12 +20,14 @@
                     </a>
                 @endforeach
             </div>
+
             <!-- Gradient Kiri -->
             <div class="pointer-events-none absolute left-0 top-0 z-10 h-full w-1/12 transition-all duration-100">
                 <div
                     class="h-full w-full bg-gradient-to-r from-[#ffffff] to-[rgba(255,255,255,0)] transition-all duration-100 dark:from-[rgba(0,0,0,0.9)] dark:to-[rgba(0,0,0,0)]">
                 </div>
             </div>
+
             <!-- Gradient Kanan -->
             <div class="pointer-events-none absolute right-0 top-0 z-10 h-full w-1/12 transition-all duration-100">
                 <div
@@ -31,6 +35,8 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Article -->
         <header class="mt-[70px] flex flex-col items-center gap-[50px] max-sm:mt-[50px] max-sm:gap-[35px]">
             <div id="Headline" class="mx-auto flex max-w-[1130px] flex-col items-center gap-4 max-sm:mx-5">
                 <p class="w-fit text-[#A3A6AE] max-sm:text-xs">{{ $articleNews->created_at->format('d M Y') }} •
@@ -45,6 +51,8 @@
                                 <img src="{{ Storage::url($articleNews->author->avatar) }}"
                                     class="h-full w-full object-cover" alt="avatar">
                             </div>
+
+                            <!-- Author -->
                             <div class="flex flex-col">
                                 <p class="text-sm font-semibold leading-[21px] dark:text-white max-sm:text-xs">
                                     {{ $articleNews->author->name }}</p>
@@ -55,18 +63,26 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Thumbnail -->
             <div class="flex h-[500px] w-full shrink-0 overflow-hidden max-sm:h-[400px]">
                 <img src="{{ Storage::url($articleNews->thumbnail) }}" class="h-full w-full object-cover"
                     alt="cover thumbnail">
             </div>
         </header>
+
+        <!-- Article -->
         <section id="Article-container"
             class="mx-auto mt-[50px] flex max-w-[1130px] gap-20 max-[1130px]:mx-5 max-[900px]:gap-16 max-[750px]:gap-12">
             <article id="Content-wrapper" class="dark:text-white max-sm:text-xs">
                 {!! $articleNews->content !!}
             </article>
+
+            <!-- Side Bar -->
             <div
                 class="side-bar flex w-[300px] shrink-0 flex-col gap-10 max-[900px]:w-[250px] max-[900px]:gap-8 max-[750px]:w-[200px] max-[750px]:gap-6 max-sm:hidden">
+
+                <!-- Ads 1 -->
                 <div class="ads flex w-full flex-col gap-3">
                     <a href="{{ $square_ads_1->link }}">
                         <img src="{{ Storage::url($square_ads_1->thumbnail) }}" class="h-full w-full object-contain"
@@ -84,6 +100,7 @@
                     <p class="font-bold dark:text-white max-[900px]:text-[14px] max-[750px]:text-[12px]">More From Author
                     </p>
 
+                    <!-- Author News -->
                     @forelse($author_news as $item_news)
                         <a href="{{ route('front.details', $item_news->slug) }}" class="card-from-author">
                             <div
@@ -108,8 +125,9 @@
                     @empty
                         <p class="dark:text-zinc-400">No news found</p>
                     @endforelse
-
                 </div>
+
+                <!-- Advertisement -->
                 <div class="ads flex w-full flex-col gap-3">
                     <a href="{{ $square_ads_2->link }}">
                         <img src="{{ Storage::url($square_ads_2->thumbnail) }}" class="h-full w-full object-contain"
@@ -125,6 +143,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- Advertisement -->
         <section id="Advertisement"
             class="mx-auto mt-[70px] flex max-w-[1130px] justify-center max-[1130px]:mx-5 max-sm:mt-[50px]">
             <div class="flex w-fit shrink-0 flex-col gap-3">
@@ -144,6 +164,8 @@
                 </p>
             </div>
         </section>
+
+        <!--Another Article -->
         <section id="Up-to-date"
             class="dark:opacity-65 mt-[70px] flex w-full justify-center bg-[#F9F9FC] py-[50px] dark:bg-zinc-800 max-sm:mt-[50px]">
             <div class="mx-auto flex max-w-[1130px] flex-col gap-[30px] max-[1130px]:mx-5 max-sm:gap-[20px]">

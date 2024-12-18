@@ -4,6 +4,8 @@
 
     <body class="bg-white font-[Poppins] transition-all duration-300 ease-in-out dark:bg-[#08080a]">
         <x-navbar />
+
+        <!-- Category -->
         <nav id="Category"
             class="relative mx-auto mt-[30px] max-w-[1130px] transition-all duration-100 max-[1130px]:w-full max-sm:mt-[20px]">
             <div class="carousel-category relative z-0">
@@ -17,12 +19,14 @@
                     </a>
                 @endforeach
             </div>
+
             <!-- Gradient Kiri -->
             <div class="pointer-events-none absolute left-0 top-0 z-10 h-full w-1/12 transition-all duration-100">
                 <div
                     class="h-full w-full bg-gradient-to-r from-[#ffffff] to-[rgba(255,255,255,0)] transition-all duration-100 dark:from-[rgba(0,0,0,0.9)] dark:to-[rgba(0,0,0,0)]">
                 </div>
             </div>
+
             <!-- Gradient Kanan -->
             <div class="pointer-events-none absolute right-0 top-0 z-10 h-full w-1/12 transition-all duration-100">
                 <div
@@ -31,9 +35,9 @@
             </div>
         </nav>
 
+        <!-- Featured -->
         <section id="Featured" class="mt-[30px] max-sm:mt-[20px]">
             <div class="main-carousel w-full">
-
                 @forelse ($featured_articles as $article)
                     <div
                         class="featured-news-card relative flex h-[550px] w-full shrink-0 overflow-hidden max-sm:h-[450px]">
@@ -67,9 +71,10 @@
                 @empty
                     <p class="dark:text-zinc-400">No articles</p>
                 @endforelse
-
             </div>
         </section>
+
+        <!-- Latest News -->
         <section id="Up-to-date"
             class="mx-auto mt-[70px] flex max-w-[1130px] flex-col gap-[30px] max-[1130px]:mx-5 max-sm:mt-[50px] max-sm:gap-[20px]">
             <div class="flex items-center justify-between">
@@ -81,8 +86,9 @@
                     class="badge-orange w-fit rounded-full bg-[#f0e5f6] p-[8px_18px] text-sm font-bold leading-[21px] text-[#733d93] dark:bg-zinc-700 dark:text-white max-sm:p-[6px_14px] max-sm:text-xs">
                     UP TO DATE</p>
             </div>
-            <div class="flex flex-wrap justify-center gap-[30px] max-sm:gap-[20px]">
 
+            <!-- Card News -->
+            <div class="flex flex-wrap justify-center gap-[30px] max-sm:gap-[20px]">
                 @forelse ($articles as $article)
                     <a href="{{ route('front.details', $article->slug) }}"
                         class="card-news w-full sm:w-1/2 md:w-1/3 lg:w-[350px]">
@@ -108,10 +114,10 @@
                 @empty
                     <p class="dark:text-zinc-400">No articles</p>
                 @endforelse
-
             </div>
-
         </section>
+
+        <!-- Best Authors -->
         <section id="Best-authors" class="mx-auto mt-[70px] flex max-w-[1130px] flex-col gap-[30px] max-sm:gap-[20px]">
             <div class="flex flex-col items-center gap-[14px] text-center">
                 <p
@@ -123,6 +129,7 @@
                 </h2>
             </div>
 
+            <!-- Authors -->
             <div class="relative mx-auto mt-[30px] w-full max-w-[1130px] max-sm:mt-[20px]">
                 <div class="group z-0 flex space-x-5 overflow-hidden max-sm:space-x-2">
                     <div class="group-hover:paused flex animate-loop-scroll space-x-5 max-sm:space-x-2">
@@ -168,6 +175,8 @@
                         @endforelse
                     </div>
                 </div>
+
+                <!-- Gradient Kiri -->
                 <div class="pointer-events-none absolute left-0 top-0 z-10 h-full w-1/12 transition-all duration-100">
                     <div
                         class="h-full w-full bg-gradient-to-r from-[#ffffff] to-[rgba(255,255,255,0)] transition-all duration-100 dark:from-[rgba(0,0,0,0.9)] dark:to-[rgba(0,0,0,0)]">
@@ -181,9 +190,9 @@
                     </div>
                 </div>
             </div>
-
-
         </section>
+
+        <!-- Advertisement -->
         <section id="Advertisement"
             class="mx-auto mt-[70px] flex max-w-[1130px] justify-center max-[1130px]:mx-5 max-sm:mt-[50px]">
             <div class="flex w-fit shrink-0 flex-col gap-3">
@@ -203,6 +212,8 @@
                 </p>
             </div>
         </section>
+
+        <!-- Latest News in Entertainment -->
         <section id="Latest-entertainment"
             class="mx-auto mt-[70px] flex max-w-[1130px] flex-col gap-[30px] max-[1130px]:mx-5 max-sm:mt-[50px] max-sm:gap-[20px]">
             <div class="flex items-center justify-between">
@@ -234,7 +245,6 @@
                 <div
                     class="custom-scrollbar relative h-[424px] w-fit overflow-x-hidden overflow-y-scroll px-5 max-[750px]:w-full max-[750px]:px-2">
                     <div class="flex w-[455px] shrink-0 flex-col gap-5 max-[750px]:w-full">
-
                         @forelse ($entertainment_articles as $article)
                             <a href="{{ route('front.details', $article->slug) }}" class="card py-[2px]">
                                 <div
@@ -256,7 +266,6 @@
                         @empty
                             <p class="dark:text-zinc-400 max-sm:text-xs">No articles</p>
                         @endforelse
-
                     </div>
                     <div
                         class="sticky bottom-0 z-10 h-[100px] w-full bg-gradient-to-b from-[rgba(255,255,255,0)] to-[#ffffff] dark:from-[rgba(0,0,0,0)] dark:to-[rgba(0,0,0,0.9)]">
@@ -265,6 +274,7 @@
             </div>
         </section>
 
+        <!-- Latest News in Business -->
         <section id="Latest-business"
             class="mx-auto mt-[70px] flex max-w-[1130px] flex-col gap-[30px] max-[1130px]:mx-5 max-sm:mt-[50px] max-sm:gap-[20px]">
             <div class="flex items-center justify-between">
@@ -296,7 +306,6 @@
                 <div
                     class="custom-scrollbar relative h-[424px] w-fit overflow-x-hidden overflow-y-scroll px-5 max-[750px]:w-full max-[750px]:px-2">
                     <div class="flex w-[455px] shrink-0 flex-col gap-5 max-[750px]:w-full">
-
                         @forelse ($business_articles as $article)
                             <a href="{{ route('front.details', $article->slug) }}" class="card py-[2px]">
                                 <div
@@ -318,7 +327,6 @@
                         @empty
                             <p class="dark:text-zinc-400 max-sm:text-xs">No articles</p>
                         @endforelse
-
                     </div>
                     <div
                         class="sticky bottom-0 z-10 h-[100px] w-full bg-gradient-to-b from-[rgba(255,255,255,0)] to-[#ffffff] dark:from-[rgba(0,0,0,0)] dark:to-[rgba(0,0,0,0.9)]">
@@ -327,6 +335,7 @@
             </div>
         </section>
 
+        <!-- Latest News in Automotive -->
         <section id="Latest-automotive"
             class="mx-auto mt-[70px] flex max-w-[1130px] flex-col gap-[30px] max-[1130px]:mx-5 max-sm:mt-[50px] max-sm:gap-[20px]">
             <div class="flex items-center justify-between">
@@ -358,7 +367,6 @@
                 <div
                     class="custom-scrollbar relative h-[424px] w-fit overflow-x-hidden overflow-y-scroll px-5 max-[750px]:w-full max-[750px]:px-2">
                     <div class="flex w-[455px] shrink-0 flex-col gap-5 max-[750px]:w-full">
-
                         @forelse ($automotive_articles as $article)
                             <a href="{{ route('front.details', $article->slug) }}" class="card py-[2px]">
                                 <div
@@ -380,7 +388,6 @@
                         @empty
                             <p class="dark:text-zinc-400 max-sm:text-xs">No articles</p>
                         @endforelse
-
                     </div>
                     <div
                         class="sticky bottom-0 z-10 h-[100px] w-full bg-gradient-to-b from-[rgba(255,255,255,0)] to-[#ffffff] dark:from-[rgba(0,0,0,0)] dark:to-[rgba(0,0,0,0.9)]">
