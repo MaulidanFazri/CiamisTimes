@@ -6,7 +6,7 @@
         <x-navbar />
         <nav id="Category"
             class="relative mx-auto mt-[30px] max-w-[1130px] transition-all duration-100 max-[1130px]:w-full max-sm:mt-[20px]">
-            <div class="carousel relative z-0">
+            <div class="carousel-category relative z-0">
                 @foreach ($categories as $category)
                     <a href="{{ route('front.category', $category->slug) }}"
                         class="mx-2 my-1 flex gap-1 rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93] max-sm:mx-1 max-sm:p-[8px_18px]">
@@ -124,7 +124,7 @@
             </div>
 
             <div class="relative mx-auto mt-[30px] w-full max-w-[1130px] max-sm:mt-[20px]">
-                <div class="group z-0 flex space-x-5 max-sm:space-x-2 overflow-hidden">
+                <div class="group z-0 flex space-x-5 overflow-hidden max-sm:space-x-2">
                     <div class="group-hover:paused flex animate-loop-scroll space-x-5 max-sm:space-x-2">
                         @forelse ($authors as $author)
                             <a href="{{ route('front.author', $author->slug) }}" class="card-authors">
