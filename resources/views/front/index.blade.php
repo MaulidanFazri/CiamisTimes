@@ -53,11 +53,13 @@
                             <div class="prevNextButtons mb-[60px] flex items-center gap-4">
                                 <button
                                     class="button--previous flex h-[38px] w-[38px] shrink-0 appearance-none items-center justify-center rounded-full ring-1 ring-white transition-all duration-100 hover:ring-2 hover:ring-[#733d93] max-sm:h-[32px] max-sm:w-[32px]">
-                                    <img src="{{ asset('assets/images/icons/arrow.svg') }}" alt="arrow" class="max-sm:w-[14px]" />
+                                    <img src="{{ asset('assets/images/icons/arrow.svg') }}" alt="arrow"
+                                        class="max-sm:w-[14px]" />
                                 </button>
                                 <button
                                     class="button--next flex h-[38px] w-[38px] shrink-0 rotate-180 appearance-none items-center justify-center rounded-full ring-1 ring-white transition-all duration-100 hover:ring-2 hover:ring-[#733d93] max-sm:h-[32px] max-sm:w-[32px]">
-                                    <img src="{{ asset('assets/images/icons/arrow.svg') }}" alt="arrow" class="max-sm:w-[14px]"/>
+                                    <img src="{{ asset('assets/images/icons/arrow.svg') }}" alt="arrow"
+                                        class="max-sm:w-[14px]" />
                                 </button>
                             </div>
                         </div>
@@ -87,7 +89,7 @@
                         <div
                             class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93]">
                             <div
-                                class="thumbnail-container relative flex h-[200px] max-sm:h-[180px] w-full shrink-0 overflow-hidden rounded-[20px]">
+                                class="thumbnail-container relative flex h-[200px] w-full shrink-0 overflow-hidden rounded-[20px] max-sm:h-[180px]">
                                 <p
                                     class="badge-white absolute left-5 top-5 rounded-full bg-white p-[8px_18px] text-xs font-bold uppercase leading-[18px] max-sm:p-[6px_14px] max-sm:text-[10px] max-sm:leading-[16px]">
                                     {{ $article->category->name }}</p>
@@ -122,27 +124,49 @@
             </div>
 
             <div class="relative mx-auto mt-[30px] w-full max-w-[1130px] max-sm:mt-[20px]">
-                <div class="carousel-author relative z-0">
-
-                    @forelse ($authors as $author)
-                        <a href="{{ route('front.author', $author->slug) }}" class="card-authors">
-                            <div
-                                class="max-[1130px]: mx-2 my-1 flex flex-col items-center gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93] max-sm:mx-1 max-sm:my-[2px] max-sm:p-[20px_16px]">
+                <div class="group z-0 flex space-x-5 max-sm:space-x-2 overflow-hidden">
+                    <div class="group-hover:paused flex animate-loop-scroll space-x-5 max-sm:space-x-2">
+                        @forelse ($authors as $author)
+                            <a href="{{ route('front.author', $author->slug) }}" class="card-authors">
                                 <div
-                                    class="flex h-[70px] w-[70px] shrink-0 overflow-hidden rounded-full max-sm:h-[50px] max-sm:w-[50px]">
-                                    <img src="{{ Storage::url($author->avatar) }}" class="h-full w-full object-cover"
-                                        alt="avatar" />
+                                    class="my-1 flex w-max flex-col items-center gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93] max-sm:mx-1 max-sm:my-[2px] max-sm:p-[20px_16px]">
+                                    <div
+                                        class="flex h-[70px] w-[70px] shrink-0 overflow-hidden rounded-full max-sm:h-[50px] max-sm:w-[50px]">
+                                        <img src="{{ Storage::url($author->avatar) }}" class="h-full w-full object-cover"
+                                            alt="avatar" />
+                                    </div>
+                                    <div class="flex flex-col gap-1 text-center">
+                                        <p class="font-semibold dark:text-white max-sm:text-sm">{{ $author->name }}</p>
+                                        <p class="text-sm leading-[21px] text-[#A3A6AE] max-sm:text-[10px]">
+                                            {{ $author->news->count() }} News</p>
+                                    </div>
                                 </div>
-                                <div class="flex flex-col gap-1 text-center">
-                                    <p class="font-semibold dark:text-white max-sm:text-sm">{{ $author->name }}</p>
-                                    <p class="text-sm leading-[21px] text-[#A3A6AE] max-sm:text-[10px]">
-                                        {{ $author->news->count() }} News</p>
+                            </a>
+                        @empty
+                            <p class="dark:text-zinc-300">No authors</p>
+                        @endforelse
+                    </div>
+                    <div class="group-hover:paused flex animate-loop-scroll space-x-5 max-sm:space-x-2" aria-hidden="true">
+                        @forelse ($authors as $author)
+                            <a href="{{ route('front.author', $author->slug) }}" class="card-authors">
+                                <div
+                                    class="my-1 flex w-max flex-col items-center gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93] max-sm:mx-1 max-sm:my-[2px] max-sm:p-[20px_16px]">
+                                    <div
+                                        class="flex h-[70px] w-[70px] shrink-0 overflow-hidden rounded-full max-sm:h-[50px] max-sm:w-[50px]">
+                                        <img src="{{ Storage::url($author->avatar) }}" class="h-full w-full object-cover"
+                                            alt="avatar" />
+                                    </div>
+                                    <div class="flex flex-col gap-1 text-center">
+                                        <p class="font-semibold dark:text-white max-sm:text-sm">{{ $author->name }}</p>
+                                        <p class="text-sm leading-[21px] text-[#A3A6AE] max-sm:text-[10px]">
+                                            {{ $author->news->count() }} News</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    @empty
-                        <p class="dark:text-zinc-300">No authors</p>
-                    @endforelse
+                            </a>
+                        @empty
+                            <p class="dark:text-zinc-300">No authors</p>
+                        @endforelse
+                    </div>
                 </div>
                 <div class="pointer-events-none absolute left-0 top-0 z-10 h-full w-1/12 transition-all duration-100">
                     <div
@@ -157,6 +181,7 @@
                     </div>
                 </div>
             </div>
+
 
         </section>
         <section id="Advertisement"
@@ -301,9 +326,9 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="Latest-automotive"
-            class="mx-auto mt-[70px] max-sm:mt-[50px] flex max-w-[1130px] flex-col gap-[30px] max-[1130px]:mx-5 max-sm:gap-[20px]">
+            class="mx-auto mt-[70px] flex max-w-[1130px] flex-col gap-[30px] max-[1130px]:mx-5 max-sm:mt-[50px] max-sm:gap-[20px]">
             <div class="flex items-center justify-between">
                 <h2 class="text-[26px] font-bold leading-[39px] dark:text-white max-sm:text-[20px]">
                     Latest For You <br />

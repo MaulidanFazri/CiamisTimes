@@ -72,7 +72,7 @@
 </div>
 <div class="dark:bg-opacity-55 hidden w-full bg-[#F9F9FC] px-5 py-8 dark:bg-zinc-800" id="navbar-hamburger">
     <form method="GET" action="{{ route('front.search') }}"
-        class="relative mb-5 flex h-12 items-center rounded-full border border-[#E8EBF4] transition-all duration-100 focus-within:ring-2 focus-within:ring-[#733d93] dark:border-zinc-600 max-sm:h-9">
+        class="relative mb-5 flex h-12 items-center rounded-full border border-[#E8EBF4] transition-all duration-100 focus-within:ring-2 focus-within:ring-[#733d93] dark:border-zinc-600 max-sm:h-10">
         <div class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
             <svg class="h-4 w-4 text-gray-500 dark:text-gray-400 max-sm:h-3 max-sm:w-3" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -90,7 +90,7 @@
         <li>
             <a href="mailto:ciamistimes@gmail.com?subject=Pemesanan%20Pemasangan%20Iklan%20di%20Ciamis%20Times&body=Kepada%20Tim%20Ciamis%20Times%2C%0A%0ASaya%20ingin%20melakukan%20pemesanan%20untuk%20pemasangan%20iklan%20di%20situs%20web%20Ciamis%20Times.%20Berikut%20adalah%20informasi%20terkait%20pemesanan%20iklan%3A%0A%0A-%20Nama%20Perusahaan%3A%20%5BNama%20Perusahaan%5D%0A-%20Jenis%20Iklan%3A%20%5BBanner%2C%20Square%5D%0A-%20Durasi%20Pemasangan%20Iklan%3A%20%5BBerapa%20Lama%20Iklan%20Akan%20Tayang%5D%0A-%20Anggaran%3A%20%5BAnggaran%20untuk%20Iklan%5D%0A-%20Kontak%20Person%3A%20%5BNama%20Kontak%20Person%5D%0A-%20Email%20Kontak%20Person%3A%20%5BEmail%20Kontak%20Person%5D%0A-%20Telepon%20Kontak%20Person%3A%20%5BNomor%20Telepon%20Kontak%20Person%5D%0A%0AMohon%20informasi%20lebih%20lanjut%20mengenai%20prosedur%20dan%20harga%20pemasangan%20iklan%20di%20Ciamis%20Times%2C%20serta%20syarat%20dan%20ketentuan%20yang%20berlaku.%0A%0ATerima%20kasih%20atas%20perhatian%20dan%20kerjasamanya.%20Saya%20menunggu%20balasan%20dari%20Tim%20Ciamis%20Times.%0A%0AHormat%20saya%2C%0A%5BNama%20Anda%5D%0A%5BPerusahaan%20Anda%20(jika%20ada)%5D"
                 class="block rounded-full border-2 border-[#733d93] bg-[#733D93] text-center text-white hover:shadow-[0_10px_15px_0_#733d9380] dark:bg-[#19191c] dark:hover:bg-[#733D93]">
-                <div class="flex h-12 w-full items-center justify-center gap-2 max-sm:h-9">
+                <div class="flex h-12 w-full items-center justify-center gap-2 max-sm:h-10">
                     <div class="flex h-6 w-6 shrink-0 max-sm:h-[20px] max-sm:w-[20px]">
                         <img src="{{ asset('assets/images/icons/favorite-chart.svg') }}" alt="icon" />
                     </div>

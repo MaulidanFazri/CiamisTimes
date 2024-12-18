@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('flickity.min.css') }}">
+    @vite('resources/css/app.css')
+
     @stack('after-styles')
 </head>
 
@@ -89,6 +91,8 @@
             }
         });
     });
+
+    
 </script>
 <script src="{{ asset('js/two-lines-text.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"

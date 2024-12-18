@@ -1,7 +1,7 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
@@ -11,6 +11,15 @@ export default {
     ],
     theme: {
         extend: {
+            animation: {
+                "loop-scroll": "loop-scroll 30s linear infinite",
+            },
+            keyframes: {
+                "loop-scroll": {
+                    from: { transform: "translateX(0%)" },
+                    to: { transform: "translateX(-100%)" },
+                },
+            },
             colors: {
                 primary: "#567A94",
                 lightBorder: "#E8EBF4",
@@ -30,6 +39,6 @@ export default {
             },
         },
     },
-    plugins: [],
     darkMode: "class",
+    plugins: [],
 };
