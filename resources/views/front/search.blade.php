@@ -12,7 +12,7 @@
             <div class="carousel-category relative z-0">
                 @foreach ($categories as $item_category)
                     <a href="{{ route('front.category', $item_category->slug) }}"
-                        class="mx-2 my-1 flex gap-1 rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93] max-sm:mx-1 max-sm:p-[8px_18px]">
+                        class="mx-2 my-1 flex gap-1 rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#A72185] dark:ring-zinc-700 dark:hover:ring-[#A72185] max-sm:mx-1 max-sm:p-[8px_18px]">
                         <div class="flex h-6 w-6 shrink-0 max-sm:h-[18px] max-sm:w-[18px]">
                             <img src="{{ Storage::url($item_category->icon) }}" alt="icon" class="dark:invert" />
                         </div>
@@ -57,7 +57,7 @@
                         <a href="{{ route('front.details', $news->slug) }}"
                             class="card-news w-full sm:w-1/2 md:w-1/3 lg:w-[350px]">
                             <div
-                                class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93] max-sm:p-[24px_18px]">
+                                class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#A72185] dark:ring-zinc-700 dark:hover:ring-[#A72185] max-sm:p-[24px_18px]">
                                 <div
                                     class="thumbnail-container relative h-[200px] overflow-hidden rounded-[20px] max-sm:h-[180px]">
                                     <div

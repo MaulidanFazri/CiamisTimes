@@ -11,7 +11,7 @@
             <div class="carousel-category relative z-0">
                 @foreach ($categories as $item_category)
                     <a href="{{ route('front.category', $item_category->slug) }}"
-                        class="mx-2 my-1 flex gap-1 rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93] max-sm:mx-1 max-sm:p-[8px_18px]">
+                        class="mx-2 my-1 flex gap-1 rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#A72185] dark:ring-zinc-700 dark:hover:ring-[#A72185] max-sm:mx-1 max-sm:p-[8px_18px]">
                         <div class="flex h-6 w-6 shrink-0 max-sm:h-[18px] max-sm:w-[18px]">
                             <img src="{{ Storage::url($item_category->icon) }}" alt="icon" class="dark:invert" />
                         </div>

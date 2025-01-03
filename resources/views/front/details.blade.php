@@ -12,7 +12,7 @@
             <div class="carousel-category relative z-0">
                 @foreach ($categories as $item_category)
                     <a href="{{ route('front.category', $item_category->slug) }}"
-                        class="mx-2 my-1 flex gap-1 rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93] max-sm:mx-1 max-sm:p-[8px_18px]">
+                        class="mx-2 my-1 flex gap-1 rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#A72185] dark:ring-zinc-700 dark:hover:ring-[#A72185] max-sm:mx-1 max-sm:p-[8px_18px]">
                         <div class="flex h-6 w-6 shrink-0 max-sm:h-[18px] max-sm:w-[18px]">
                             <img src="{{ Storage::url($item_category->icon) }}" alt="icon" class="dark:invert" />
                         </div>
@@ -104,7 +104,7 @@
                     @forelse($author_news as $item_news)
                         <a href="{{ route('front.details', $item_news->slug) }}" class="card-from-author">
                             <div
-                                class="flex gap-4 rounded-[20px] bg-transparent p-[14px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93] max-[900px]:gap-3 max-[900px]:p-[12px] max-[750px]:gap-2 max-[750px]:p-[10px]">
+                                class="flex gap-4 rounded-[20px] bg-transparent p-[14px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#A72185] dark:ring-zinc-700 dark:hover:ring-[#A72185] max-[900px]:gap-3 max-[900px]:p-[12px] max-[750px]:gap-2 max-[750px]:p-[10px]">
                                 <div
                                     class="flex h-[70px] w-[70px] shrink-0 overflow-hidden rounded-2xl max-[900px]:h-[60px] max-[900px]:w-[60px] max-[750px]:h-[50px] max-[750px]:w-[50px]">
                                     <img src="{{ Storage::url($item_news->thumbnail) }}" class="h-full w-full object-cover"
@@ -180,7 +180,7 @@
                         <a href="{{ route('front.details', $article->slug) }}"
                             class="card-news w-full sm:w-1/2 md:w-1/3 lg:w-[350px]">
                             <div
-                                class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#733d93] dark:ring-zinc-700 dark:hover:ring-[#733d93] max-sm:p-[24px_18px]">
+                                class="flex flex-col gap-4 rounded-[20px] bg-transparent p-[26px_20px] ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-[#A72185] dark:ring-zinc-700 dark:hover:ring-[#A72185] max-sm:p-[24px_18px]">
                                 <div
                                     class="thumbnail-container relative flex h-[200px] w-full shrink-0 overflow-hidden rounded-[20px] max-sm:h-[180px]">
                                     <p
