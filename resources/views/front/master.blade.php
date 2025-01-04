@@ -19,6 +19,7 @@
 @yield('content')
 
 @stack('before-scripts')
+@vite('resources/js/app.js')
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 
