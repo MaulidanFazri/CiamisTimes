@@ -85,8 +85,8 @@
                 <!-- Ads 1 -->
                 <div class="ads flex w-full flex-col gap-3">
                     <a href="{{ $square_ads_1->link }}">
-                        <img src="{{ Storage::url($square_ads_1->thumbnail) }}" class="h-full w-full object-contain"
-                            alt="ads" />
+                        <img src="{{ Storage::url($square_ads_1->thumbnail) }}"
+                            class="h-full w-full rounded-[5%] object-contain" alt="ads" />
                     </a>
                     <p
                         class="flex gap-1 text-sm font-medium leading-[21px] text-[#A3A6AE] max-[900px]:text-[12px] max-[750px]:text-[10px]">
@@ -130,8 +130,8 @@
                 <!-- Advertisement -->
                 <div class="ads flex w-full flex-col gap-3">
                     <a href="{{ $square_ads_2->link }}">
-                        <img src="{{ Storage::url($square_ads_2->thumbnail) }}" class="h-full w-full object-contain"
-                            alt="ads" />
+                        <img src="{{ Storage::url($square_ads_2->thumbnail) }}"
+                            class="h-full w-full rounded-[5%] object-contain" alt="ads" />
                     </a>
                     <p
                         class="flex gap-1 text-sm font-medium leading-[21px] text-[#A3A6AE] max-[900px]:text-[12px] max-[750px]:text-[10px]">
@@ -150,7 +150,7 @@
             <div class="flex w-fit shrink-0 flex-col gap-3">
                 <a href="{{ $bannerads->link }}">
                     <div
-                        class="flex h-[120px] w-[900px] shrink-0 overflow-hidden rounded-2xl ring-1 ring-[#EEF0F7] transition-all duration-100 dark:ring-zinc-800 max-[900px]:h-full max-[900px]:w-full max-[900px]:rounded-[2%]">
+                        class="flex h-[120px] w-[900px] shrink-0 overflow-hidden rounded-[15px] ring-1 ring-[#EEF0F7] transition-all duration-100 dark:ring-zinc-800 max-[900px]:h-full max-[900px]:w-full max-sm:rounded-md">
                         <img src="{{ Storage::url($bannerads->thumbnail) }}" class="h-full w-full object-cover"
                             alt="ads" />
                     </div>
@@ -167,7 +167,7 @@
 
         <!--Another Article -->
         <section id="Up-to-date"
-            class="dark:opacity-65 mt-[70px] flex w-full justify-center bg-[#F9F9FC] py-[50px] dark:bg-zinc-800 max-sm:mt-[50px]">
+            class="mt-[70px] flex w-full justify-center bg-[#F9F9FC] py-[50px] dark:bg-zinc-800 dark:opacity-65 max-sm:mt-[50px]">
             <div class="mx-auto flex max-w-[1130px] flex-col gap-[30px] max-[1130px]:mx-5 max-sm:gap-[20px]">
                 <div class="flex items-center justify-between">
                     <h2 class="text-[26px] font-bold leading-[39px] dark:text-white max-sm:text-[20px]">

@@ -21,7 +21,7 @@ module.exports = {
                 },
             },
             colors: {
-                primary: "#567A94",
+                primary: "#A72185",
                 lightBorder: "#E8EBF4",
                 darkBorder: "#52525B",
                 ring: "#EEF0F7",

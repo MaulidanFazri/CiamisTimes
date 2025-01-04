@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\BannerAdvertisementResource\Pages;
 
-use App\Filament\Resources\BannerAdvertisementResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use App\Filament\Resources\BannerAdvertisementResource;
 
 class EditBannerAdvertisement extends EditRecord
 {
