@@ -43,8 +43,8 @@
         </section>
 
         <!-- Article -->
-        <section id="Article-container" class="mx-5 mt-[50px] flex max-w-[1130px] gap-20">
-            <article id="Content-wrapper" class="text-justify dark:text-white">
+        <section id="Article-container" class="mx-auto mt-[50px] flex max-w-[1130px] gap-20">
+            <article id="Content-wrapper" class="text-justify dark:text-white mx-5">
                 <p class="text-sm text-zinc-400">
                     Terakhir diperbarui:
                     {{ \Carbon\Carbon::createFromTimestamp(filemtime(__FILE__))->format('d F Y') }}

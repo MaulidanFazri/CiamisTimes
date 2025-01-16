@@ -37,7 +37,7 @@ class AdminPanelProvider extends PanelProvider
             ->darkModeBrandLogo(asset('assets/images/logos/logo_dark.svg'))
             ->favicon(asset('assets/images/logos/favicon.svg'))
             ->colors([
-                'primary' => '#733d93',
+                'primary' => '#A72185',
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -74,11 +74,11 @@ class AdminPanelProvider extends PanelProvider
                     ->setTitle('Profile')
                     ->setNavigationLabel('Profile')
                     ->setIcon('heroicon-o-user')
-                    ->shouldShowAvatarForm(
-                        value: true,
-                        directory: 'avatars', // image will be stored in 'storage/app/public/avatars
-                        rules: 'mimes:jpeg,png|max:1024' //only accept jpeg and png files with a maximum size of 1MB
-                    )
+                    // ->shouldShowAvatarForm(
+                    //     value: true,
+                    //     directory: 'avatars', // image will be stored in 'storage/app/public/avatars
+                    //     rules: 'mimes:jpeg,png|max:1024' //only accept jpeg and png files with a maximum size of 1MB
+                    // )
                     ->shouldShowBrowserSessionsForm()
                     ->shouldShowDeleteAccountForm(false),
             ]);

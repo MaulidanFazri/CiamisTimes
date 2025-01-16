@@ -22,10 +22,6 @@ module.exports = {
             },
             colors: {
                 primary: "#A72185",
-                lightBorder: "#E8EBF4",
-                darkBorder: "#52525B",
-                ring: "#EEF0F7",
-                darkRing: "#3F3F46",
             },
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],

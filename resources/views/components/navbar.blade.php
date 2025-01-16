@@ -63,16 +63,11 @@
                 <span class="sr-only">Open main menu</span>
 
                 <!-- Ikon Hamburger -->
-                {{-- <svg id="icon-hamburger"
-                    class="w-[26px] text-black transition-transform duration-300 ease-in-out group-hover:text-primary dark:text-white min-[640px]:w-[36px]"
-                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 1h15M1 7h15M1 13h15" />
-                </svg> --}}
                 <svg id="icon-hamburger"
                     class="h-9 w-9 text-zinc-400 transition-transform duration-300 ease-in-out group-hover:text-primary dark:text-white min-[640px]:w-[36px]""
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" >
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
 
                 <!-- Ikon Close -->
