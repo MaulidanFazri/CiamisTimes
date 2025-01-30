@@ -94,7 +94,7 @@
     <!--Copyright section-->
     <div
         class="w-full bg-zinc-100 p-4 text-center text-sm text-zinc-600 dark:bg-zinc-500 dark:bg-opacity-10 dark:text-zinc-400 max-sm:p-2 max-sm:text-[10px]">
-        © 2024 Copyright:
+        © 2025 Copyright:
         <a href="{{ route('front.index') }}" class="text-zinc-700 dark:text-zinc-300">Ciamis Times</a>
     </div>
 </footer>
