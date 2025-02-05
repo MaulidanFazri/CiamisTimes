@@ -8,7 +8,8 @@
         <!-- Category -->
         <nav id="Category"
             class="relative mx-auto mt-[30px] max-w-[1130px] transition-all duration-100 max-[1130px]:w-full max-sm:mt-[20px]">
-            <div class="carousel-category relative z-0">
+            <div
+                class="carousel-category relative z-0 touch-pan-x overflow-x-auto overflow-y-hidden scroll-smooth whitespace-nowrap">
                 @foreach ($categories as $category)
                     <a href="{{ route('front.category', $category->slug) }}"
                         class="mx-2 my-1 flex gap-1 rounded-full p-[12px_22px] font-semibold ring-1 ring-[#EEF0F7] transition-all duration-100 hover:ring-2 hover:ring-primary dark:ring-zinc-700 dark:hover:ring-primary max-sm:mx-1 max-sm:p-[8px_18px]">

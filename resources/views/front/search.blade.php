@@ -47,7 +47,7 @@
 
         <!-- Search Result -->
         <section id="search-result"
-            class="mx-auto mb-[100px] mt-[70px] flex max-w-[1130px] flex-col items-start gap-[30px] max-[1130px]:mx-5 max-sm:mt-[50px] max-sm:gap-[20px]">
+            class="mx-auto mb-[100px] mt-[70px] flex max-w-[1130px] flex-col items-start max-[1130px]:mx-5 max-sm:mt-[50px] max-sm:gap-[20px]">
             <h2 class="text-[26px] font-bold leading-[39px] dark:text-white max-sm:text-xl">Search Result:
                 <span>{{ ucfirst($keyword) }}</span>
             </h2>
@@ -83,7 +83,10 @@
                     @endforeach
                 </div>
             @else
-                <p class="text-center dark:text-zinc-400">No news found</p>
+                <div class="flex w-full justify-center">
+                    <img src="{{ asset('assets/images/icons/no_data.png') }}" alt="No news found"
+                        class="h-80 object-contain">
+                </div>
             @endif
         </section>
     </body>

@@ -95,7 +95,10 @@
                     @endforeach
                 </div>
             @else
-                <p class="text-center dark:text-zinc-400">No news found</p>
+                <div class="flex w-full justify-center">
+                    <img src="{{ asset('assets/images/icons/no_data.png') }}" alt="No news found"
+                        class="h-96 object-contain">
+                </div>
             @endif
         </section>
 

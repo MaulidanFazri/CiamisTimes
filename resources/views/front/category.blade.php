@@ -46,7 +46,7 @@
             <!-- Category News -->
             @if ($category->news->isNotEmpty())
                 <div id="search-cards" class="flex flex-wrap justify-center gap-[30px] max-sm:gap-[20px]">
-                    @foreach ($category->news as $news)
+                    @foreach ($category->news->sortByDesc('created_at') as $news)
                         <a href="{{ route('front.details', $news->slug) }}"
                             class="card-news w-full sm:w-1/2 md:w-1/3 lg:w-[350px]">
                             <div
@@ -76,7 +76,10 @@
                     @endforeach
                 </div>
             @else
-                <p class="text-center dark:text-zinc-400">No news found</p>
+                <div class="flex w-full justify-center">
+                    <img src="{{ asset('assets/images/icons/no_data.png') }}" alt="No news found"
+                        class="h-80 object-contain">
+                </div>
             @endif
         </section>
 

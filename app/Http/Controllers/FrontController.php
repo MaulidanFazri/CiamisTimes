@@ -120,7 +120,9 @@ class FrontController extends Controller
 
         $articles = ArticleNews::with(['category', 'author'])
             ->where('name', 'like', '%' . $keyword . '%')
+            ->orderBy('created_at', 'desc')
             ->paginate(6);
+
 
         return view('front.search', compact('categories', 'articles', 'keyword'));
     }

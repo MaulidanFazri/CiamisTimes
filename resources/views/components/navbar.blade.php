@@ -1,6 +1,6 @@
 <div class="max-[1130px]:mx-5">
     <nav id="Navbar"
-        class="mx-auto mb-[10px] mt-[30px] flex max-w-[1130px] items-center justify-between gap-[30px] transition-all duration-100">
+        class="mx-auto mb-[10px] mt-[20px] flex max-w-[1130px] items-center justify-between gap-[30px] transition-all duration-100">
         <div class="logo-container flex items-center gap-[30px] max-sm:gap-[20px]">
             <a href="{{ route('front.index') }}" class="flex shrink-0">
                 <img src="{{ asset('assets/images/logos/logo.svg') }}" alt="logo" id="logo"
